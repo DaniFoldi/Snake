@@ -62,8 +62,9 @@ function frame() {
             if (tail > highscore) {
             	highscore = tail;
             	document.getElementById("highscore").innerText = "Highscore: " + highscore;
+                localStorage.setItem("highscore", highscore);
             }
-            tail = 5;
+            tail = trail.length - i - 1;
         }
     }
 
