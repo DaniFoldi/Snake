@@ -1,16 +1,16 @@
 var canvas, context;
-var posx = 10;
-var posy = 10;
+var posx = 12;
+var posy = 12;
 var apples = [];
 var timeout = 0;
 var cellSize = 20;
-var gridSize = 20;
+var gridSize = 25;
 var xvelocity = 1;
 var yvelocity = 0;
 var tail = 5;
 var highscore = 0;
 var trail = [];
-var applecount = 2;
+var applecount = 3;
 window.onload = function() {
     canvas = document.getElementById("gameCanvas");
     context = canvas.getContext("2d");
@@ -80,8 +80,10 @@ function frame() {
     for (var i = 0; i <  apples.length; i++) {
         if (i == 0) {
             printCell(apples[i].x, apples[i].y, "blue");
-        } else {
+        } else if (i == 1) {
             printCell(apples[i].x, apples[i].y, "red");
+        } else {
+            printCell(apples[i].x, apples[i].y, "orange");
         }
         if (posx == apples[i].x && posy == apples[i].y) {
             if (i == 0) {
